@@ -27,12 +27,13 @@ body {
   padding: 1em;
 }
 
-.search{
+.search {
   margin: 1.5em;
 }
 .display {
+  display: none;
   margin: 0.7em 1.7em 0.7em 0;
- border-radius: 10px;
+  border-radius: 10px;
   background: #86e5ff;
   width: auto;
   padding: 20px;

@@ -1,5 +1,6 @@
 var input = document.querySelector("#cityinpt");
-apik = "3045dd712ffe6e702e3245525ac7fa38";
+const apik = "3045dd712ffe6e702e3245525ac7fa38";
+const res = document.querySelector("#result");
 
 function convertion(val) {
   return (val - 273).toFixed(2);
@@ -9,14 +10,12 @@ var btn = document.querySelector("#add");
 
 btn.addEventListener("click", function () {
   fetch(
-    "https://api.openweathermap.org/data/2.5/weather?q=" +
-      input.value +
-      "&appid=" +
-      apik
+    `https://api.openweathermap.org/data/2.5/weather?q=${input.value}&appid=${apik}`
   )
     .then((res) => res.json())
 
     .then((data) => {
+      res.style.display = "block";
       document.getElementById(
         "name"
       ).innerHTML = `Weather of <span>${data.name}<span>`;
@@ -34,5 +33,5 @@ btn.addEventListener("click", function () {
       ).innerHTML = `Humidity: <span>${data.main.humidity}</span>`;
     })
 
-    .catch((err) => alert("You entered Wrong city name"));
+    .catch((err) => console.log(err));
 });

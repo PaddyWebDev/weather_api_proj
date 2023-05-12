@@ -15,22 +15,33 @@ btn.addEventListener("click", function () {
     .then((res) => res.json())
 
     .then((data) => {
-      res.style.display = "block";
-      document.getElementById(
-        "name"
-      ).innerHTML = `Weather of <span>${data.name}<span>`;
-      document.getElementById(
-        "temp"
-      ).innerHTML = `Temperature: <span>${convertion(data.main.temp)} C</span>`;
-      document.getElementById(
-        "desc"
-      ).innerHTML = `Sky Conditions: <span>${data.weather[0].description}<span>`;
-      document.getElementById(
-        "wind"
-      ).innerHTML = `Wind Speed: <span>${data.wind.speed} km/h<span>`;
-      document.getElementById(
-        "hmdty"
-      ).innerHTML = `Humidity: <span>${data.main.humidity}</span>`;
+      // console.log(Object.keys(data).length);
+      if (data.cod === '404')
+      {
+        alert("Invalid City Input! Please Enter a valid city Name");
+        // console.log(data)
+      }
+        
+      else {
+        res.style.display = "block";
+        document.getElementById(
+          "name"
+        ).innerHTML = `Weather of <span>${data.name}<span>`;
+        document.getElementById(
+          "temp"
+        ).innerHTML = `Temperature: <span>${convertion(
+          data.main.temp
+        )} C</span>`;
+        document.getElementById(
+          "desc"
+        ).innerHTML = `Sky Conditions: <span>${data.weather[0].description}<span>`;
+        document.getElementById(
+          "wind"
+        ).innerHTML = `Wind Speed: <span>${data.wind.speed} km/h<span>`;
+        document.getElementById(
+          "hmdty"
+        ).innerHTML = `Humidity: <span>${data.main.humidity}</span>`;
+      }
     })
 
     .catch((err) => console.log(err));

@@ -6,6 +6,9 @@
   box-sizing: border-box;
   font-family: "Quicksand", sans-serif;
   font-family: "Roboto Mono", monospace;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 body {
@@ -41,7 +44,6 @@ body {
   background: #86e5ff;
   width: auto;
   padding: 20px;
-
 }
 
 .result {
@@ -50,18 +52,12 @@ body {
   align-items: center;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
 }
 
 .img {
   width: 150px;
   height: 150px;
   margin: 5px;
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
 }
 #result {
   margin: 5px;
@@ -69,7 +65,4 @@ body {
 #heading {
   font-weight: normal;
   margin-bottom: 1em;
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
 }

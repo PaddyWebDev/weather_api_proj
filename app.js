@@ -1,5 +1,5 @@
 var input = document.querySelector("#cityinpt");
-const apik = "3045dd712ffe6e702e3245525ac7fa38";
+const apik = "Your API Key";
 const res = document.querySelector("#res");
 const img = document.querySelector("#img");
 const dsp_res = document.querySelector("#result");
